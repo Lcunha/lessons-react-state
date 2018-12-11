@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ListItem from './ListItem';
+import DeleteButton from './DeleteButton';
 
 class App extends React.Component {
   state = {
@@ -49,14 +51,8 @@ class App extends React.Component {
           <button disabled={this.inputIsEmpty()}>Add</button>
         </form>
 
-        <button onClick={this.deleteLastItem} disabled={this.noItemsFound()}>
-          Delete Last Item
-        </button>
-
-        <p className="items">Items</p>
-        <ol className="item-list">
-          {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
-        </ol>
+        <DeleteButton deleteLastItem={this.deleteLastItem} noItemsFound={this.noItemsFound()} />
+        <ListItem items={this.state.items}/>
       </div>
     );
   }

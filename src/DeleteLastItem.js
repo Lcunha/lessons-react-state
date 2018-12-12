@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeleteButton = props => {
+const DeleteLastItem = props => {
 
     const handleDeleteLastItem = event => {
         props.deleteLastItem();
@@ -13,9 +13,9 @@ const DeleteButton = props => {
     )
 }
 
-DeleteButton.propTypes = {
+DeleteLastItem.propTypes = {
     deleteLastItem: PropTypes.func.isRequired,
     noItemsFound: PropTypes.func.isRequired,
 }
 
-export default DeleteButton;
+export default DeleteLastItem;
